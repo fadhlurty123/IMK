@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -75,6 +76,16 @@ public class Movement : MonoBehaviour
             _animator.SetBool(IsWalking, false);
         }
 
+        if (_controls.Player.Run.IsPressed())
+        {
+            speed = 30;
+            CamShake.Instance.ShakeCam(5f, 1f);
+        }
+        else
+        {
+            speed = 10;
+        }
+
         //Movement Script
     }
 
@@ -93,6 +104,7 @@ public class Movement : MonoBehaviour
         if (_controls.Player.Run.IsPressed())
         {
             speed = 30;
+            CamShake.Instance.ShakeCam(10f, 1f);
         }
         else
             speed = 10;
