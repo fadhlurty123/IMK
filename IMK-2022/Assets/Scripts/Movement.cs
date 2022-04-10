@@ -147,4 +147,9 @@ public class Movement : MonoBehaviour
     {
         _rb.MovePosition(target); 
     }
+
+    public void ResetTheGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
